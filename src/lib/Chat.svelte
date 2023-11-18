@@ -156,7 +156,13 @@
         setTimeout(() => { submitForm(false, true) }, 0)
       }
     }
-  })
+
+    window.addEventListener('focus', focusInput)
+
+    return () => {
+      window.removeEventListener('focus', focusInput)
+    }
+})
 
   // Scroll to the bottom of the chat on update
   afterUpdate(() => {
