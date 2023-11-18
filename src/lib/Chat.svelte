@@ -405,7 +405,7 @@
         rows="1"
         on:keydown={e => {
           // Only send if Enter is pressed, not Shift+Enter
-          if (e.key === 'Enter' && !e.shiftKey) {
+          if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {
             e.stopPropagation()
             submitForm()
             e.preventDefault()
