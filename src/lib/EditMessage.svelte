@@ -2,7 +2,6 @@
   import Code from './Code.svelte'
   import { afterUpdate, createEventDispatcher, onMount } from 'svelte'
   import { deleteMessage, deleteSummaryMessage, truncateFromMessage, submitExitingPromptsNow, continueMessage, updateMessages } from './Storage.svelte'
-  import { getPrice } from './Stats.svelte'
   import SvelteMarkdown from 'svelte-markdown'
   import type { Message, Model, Chat } from './Types.svelte'
   import Fa from 'svelte-fa/src/fa.svelte'
@@ -11,7 +10,6 @@
   import { openModal } from 'svelte-modals'
   import PromptConfirm from './PromptConfirm.svelte'
   import { getImage } from './ImageStore.svelte'
-  import { getModelDetail } from './Models.svelte'
 
   export let message:Message
   export let chatId:number
@@ -265,11 +263,11 @@
     {/if}
     {#if isSystem}
       <p class="is-size-7 message-note">System Prompt</p>
-    {:else if message.usage}
+    <!-- {:else if message.usage}
       <p class="is-size-7 message-note">
         <em>{getModelDetail(message.model || '').label || message.model || defaultModel}</em> using <span class="has-text-weight-bold">{message.usage.total_tokens}</span>
         tokens ~= <span class="has-text-weight-bold">${getPrice(message.usage, message.model || defaultModel).toFixed(6)}</span>
-      </p>
+      </p> -->
     {/if}
   </div>
   <div class="tool-drawer-mask"></div>
