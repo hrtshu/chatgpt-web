@@ -62,15 +62,15 @@
     displayMessage = getDisplayMessage()
   })
 
-  const edit = () => {
-    if (message.summarized || message.streaming || editing) return
-    editing = true
-    original = message.content
-    setTimeout(() => {
-      const el = document.getElementById('edit-' + message.uuid)
-      el && el.focus()
-    }, 0)
-  }
+  // const edit = () => {
+  //   if (message.summarized || message.streaming || editing) return
+  //   editing = true
+  //   original = message.content
+  //   setTimeout(() => {
+  //     const el = document.getElementById('edit-' + message.uuid)
+  //     el && el.focus()
+  //   }, 0)
+  // }
 
   let dbnc
   const update = () => {
@@ -115,15 +115,15 @@
   }
 
   // Double click for mobile support
-  let lastTap: number = 0
-  const editOnDoubleTap = () => {
-    const now: number = new Date().getTime()
-    const timesince: number = now - lastTap
-    if ((timesince < 400) && (timesince > 0)) {
-      edit()
-    }
-    lastTap = new Date().getTime()
-  }
+  // let lastTap: number = 0
+  // const editOnDoubleTap = () => {
+  //   const now: number = new Date().getTime()
+  //   const timesince: number = now - lastTap
+  //   if ((timesince < 400) && (timesince > 0)) {
+  //     edit()
+  //   }
+  //   lastTap = new Date().getTime()
+  // }
 
   let waitingForDeleteConfirm:any = 0
 
@@ -242,9 +242,6 @@
     {:else}
       <div 
         class="message-display" 
-         
-        on:touchend={editOnDoubleTap}
-          on:dblclick|preventDefault={() => edit()}
         >
         {#if message.summary && !message.summary.length}
         <p><b>Summarizing...</b></p>
