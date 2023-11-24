@@ -47,19 +47,19 @@ html {
   }
 }
 
-@media only screen and (max-width: 900px) {
-  html {
-    --sidebarWidth: max(250px, 20%);
+// @media only screen and (max-width: 900px) {
+//   html {
+//     --sidebarWidth: max(250px, 20%);
  
-    --chatContentPaddingTop: 50px;
-    --chatContentPaddingRight: 20px;
-    --chatContentPaddingLeft: 20px;
+//     --chatContentPaddingTop: 50px;
+//     --chatContentPaddingRight: 20px;
+//     --chatContentPaddingLeft: 20px;
     
-    --chatInputPaddingRight: 30px;
-    --chatInputPaddingLeft: 30px;
-  }
+//     --chatInputPaddingRight: 30px;
+//     --chatInputPaddingLeft: 30px;
+//   }
   
-}
+// }
 
 @media screen and (min-width: 1024px) {
   .modal-card.wide {
@@ -67,13 +67,13 @@ html {
   }
 }
 
-@media only screen and (max-width: 900px) and (min-width: 769px) {
-  .chat-menu-item .chat-icon {
-    display: none;
-  }
-}
+// @media only screen and (max-width: 900px) and (min-width: 769px) {
+//   .chat-menu-item .chat-icon {
+//     display: none;
+//   }
+// }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1500px) {
   .navbar {
     display: block !important;
   }
@@ -291,7 +291,7 @@ $modal-background-background-color-dark: rgba($dark, 0.86) !default; // remove t
   overflow: visible;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1500px) {
   .main-menu .dropdown-menu .dropdown-content {
     max-height: calc(100vh - 112px);
   }
@@ -467,7 +467,7 @@ aside.menu.main-menu .menu-expanse {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1500px) {
   .prompt-input-container {
     .control.send .button {
       width: auto;
@@ -511,12 +511,12 @@ aside.menu.main-menu .menu-expanse {
   padding-right: 2px;
 }
 
-@media only screen and (max-width: 900px) {
-  .main-menu .dropdown.is-right .dropdown-menu {
-    right:auto;
-    left:0;
-  }
-}
+// @media only screen and (max-width: 900px) {
+//   .main-menu .dropdown.is-right .dropdown-menu {
+//     right:auto;
+//     left:0;
+//   }
+// }
 
 .message-body {
   z-index: 1;
