@@ -292,6 +292,10 @@
     chatRequest.updatingMessage = ''
 
     focusInput()
+
+    if (chat.name === `Chat ${chat.id}`) {
+      await suggestName()
+    }
   }
 
   const suggestName = async (): Promise<void> => {
