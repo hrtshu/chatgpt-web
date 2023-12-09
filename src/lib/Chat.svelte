@@ -157,10 +157,10 @@
       }
     }
 
-    window.addEventListener('focus', focusInput)
+    window.addEventListener('focus', focusInputWithoutScroll)
 
     return () => {
-      window.removeEventListener('focus', focusInput)
+      window.removeEventListener('focus', focusInputWithoutScroll)
     }
 })
 
@@ -175,6 +175,10 @@
   const focusInput = () => {
     input.focus()
     scrollToBottom()
+  }
+
+  const focusInputWithoutScroll = () => {
+    input.focus()
   }
 
   const addNewMessage = () => {
