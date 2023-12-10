@@ -305,7 +305,7 @@
   const suggestName = async (): Promise<void> => {
     const suggestMessage: Message = {
       role: 'user',
-      content: "Using appropriate language, please tell me a short 6 word summary of this conversation's topic for use as a book title. Only respond with the summary.",
+      content: "Tell me a short 6 word summary of this conversation's topic for use as a book title. Only respond with the summary. Express it using the main language used within the chat.",
       uuid: uuidv4()
     }
 
@@ -337,7 +337,7 @@
       })
     } else {
       response.getMessages().forEach(m => {
-        const name = m.content.split(/\s+/).slice(0, 8).join(' ').replace(/^[^a-z0-9!?]+|[^a-z0-9!?]+$/gi, '').trim()
+        const name = m.content.split(/\s+/).join(' ').trim().replace(/^"(.*?)"$/, '$1').replace(/^'(.*?)'$/, '$1').replace(/^「(.*?)」$/, '$1').trim()
         if (name) chat.name = name
       })
       saveChatStore()
