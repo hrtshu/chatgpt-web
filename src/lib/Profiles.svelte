@@ -122,8 +122,15 @@ export const restartProfile = (chatId:number, noApply:boolean = false) => {
         addMessage(chatId, tp)
       })
     }
+
+    if (settings.firstMessage) {
+      const uuid = uuidv4()
+      const firstMessage: Message = { role: 'user', content: settings.firstMessage, uuid }
+      addMessage(chatId, firstMessage)
+    }
+
     // Set to auto-start if we should
-    getChat(chatId).startSession = settings.autoStartSession
+    getChat(chatId).startSession = settings.autoStartSession || !!settings.firstMessage
     saveChatStore()
     // Mark mark this as last used
     setGlobalSettingValueByKey('lastProfile', settings.profile)

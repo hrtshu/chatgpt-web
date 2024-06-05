@@ -106,6 +106,7 @@ const defaults:ChatSettings = {
   sendSystemPromptLast: false,
   autoStartSession: false,
   trainingPrompts: [],
+  firstMessage: '',
   hiddenPromptPrefix: '',
   hppContinuePrompt: '',
   hppWithSummaryPrompt: false,
@@ -255,6 +256,13 @@ const systemPromptSettings: ChatSetting[] = [
         placeholder: 'Enter something like [Continue your response below:]',
         type: 'boolean',
         hide: (chatId) => !getChatSettings(chatId).useSystemPrompt || !(getChatSettings(chatId).hiddenPromptPrefix || '').trim()
+      },
+      {
+        key: 'firstMessage',
+        name: 'first message',
+        title: 'first message',
+        type: 'textarea',
+        hide: (chatId) => true
       },
       {
         key: 'trainingPrompts',

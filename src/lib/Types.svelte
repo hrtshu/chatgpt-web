@@ -82,6 +82,7 @@ export type ChatSettings = {
     hppWithSummaryPrompt: boolean; // include hiddenPromptPrefix when before summary prompt
     imageGenerationModel: Model;
     trainingPrompts?: Message[];
+    firstMessage?: string;
     useResponseAlteration?: boolean;
     responseAlterations?: ResponseAlteration[];
     startSequence: string;
